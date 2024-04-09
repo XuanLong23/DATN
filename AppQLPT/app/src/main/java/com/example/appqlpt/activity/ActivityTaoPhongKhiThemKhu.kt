@@ -194,7 +194,8 @@ class ActivityTaoPhongKhiThemKhu : AppCompatActivity() {
                 dichVuDao.insertDichVu(rac)
                 dichVuDao.insertDichVu(mang)
             }
-            val intent= Intent(this@ActivityTaoPhongKhiThemKhu, MainActivity::class.java)
+            val intent= Intent(this@ActivityTaoPhongKhiThemKhu, ActivityManHinhChinhChuTro::class.java)
+            intent.putExtra(MA_KHU_KEY,maKhu)
             startActivity(intent)
             finishAffinity()
         }

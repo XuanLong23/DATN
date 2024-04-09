@@ -21,6 +21,9 @@ class KhuTroDao(context:Context) {
         }
         return db.insert(KhuTro.TB_NAME,null,values)
     }
+    fun deleteKhuTro(khuTro: KhuTro):Int{
+        return db.delete(KhuTro.TB_NAME,"${KhuTro.CLM_MA_KHU_TRO}=?", arrayOf(khuTro.ma_khu_tro))
+    }
 
     fun updateInKhuTro(khutro: KhuTro):Int{
         val values=ContentValues()
