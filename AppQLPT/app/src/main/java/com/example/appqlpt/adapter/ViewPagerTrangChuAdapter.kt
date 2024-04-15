@@ -5,6 +5,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.appqlpt.fragment.FragmentQuanLy
+import com.example.appqlpt.fragment.FragmentTongQuan
 
 class ViewPagerTrangChuAdapter(fragmentManager: FragmentManager,lifecycle: Lifecycle)
     :FragmentStateAdapter(fragmentManager,lifecycle){

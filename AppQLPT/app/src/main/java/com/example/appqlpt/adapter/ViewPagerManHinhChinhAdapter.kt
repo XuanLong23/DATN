@@ -17,13 +17,13 @@ class ViewPagerManHinhChinhAdapter(fragmentManager: FragmentManager,lifecycle:Li
                 FragmentTrangChu()
             }
             1->{
-                FragmentTrangChu()
+                FragmentDangTin()
             }
             2->{
-                FragmentTrangChu()
+                FragmentThongKe()
             }
             3->{
-                FragmentTrangChu()
+                FragmentCaNhan()
             }
             else->{
                 FragmentTrangChu()
