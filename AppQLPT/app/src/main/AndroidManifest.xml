@@ -14,11 +14,75 @@
         android:theme="@style/Theme.AppQLPT"
         tools:targetApi="31">
         <activity
-            android:name=".ActivityManHinhChinhChuTro"
+            android:name=".activity.ActivityThongTinChuNha"
             android:exported="false" />
         <activity
-            android:name=".activity.ActivityTaoPhongKhiThemKhu"
+            android:name=".activity.ActivityPhongTrong"
             android:exported="false" />
+        <activity
+            android:name=".activity.ActivitySuaDichVu"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ActivityThemDichVu"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ActivityQuanLyDichVu"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ActivityDanhSachPhong"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ActivityChiTietPhong"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ActivityManHinhChinhChuTro"
+            android:exported="true" />
+        <activity
+            android:name=".activity.ActivityTaoHopDong"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ActivityDoanhThu"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ActivityPhongSapHetHopDong"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ActivityPhongChuaDongTien"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ActivityPhongDangThue"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ActivitytaoHopDongMoi"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ActivityTaoHoaDon"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ActivityDanhSachHopDong"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ActivityDanhSachPhongTHD"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ActivityKetThucHopDong"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ActivityXuLyPhong"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ActivityDanhSachNguoiThue"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".activity.ActivityThemPhong"
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name=".activity.ActivityDanhSachPhong" -->
+        <!-- android:exported="false" /> -->
+
         <activity
             android:name=".activity.ActivityThemKhuTro"
             android:exported="false" />
@@ -26,11 +90,27 @@
             android:name=".activity.ActivityHuongDanTaoKhu"
             android:exported="false" />
         <activity
-            android:name=".activity.ActivityDangKy"
+            android:name=".activity.ActivityTaoPhongKhiThemKhu"
             android:exported="false" />
         <activity
             android:name=".activity.ActivityDangNhap"
             android:exported="false" />
+        <activity
+            android:name=".activity.ActivityCapNhatThongTinChuNha"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ActivityCapNhatHopDong"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ActivityCapNhatKhachThue"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ActivityDangKy"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
         <activity
             android:name=".activity.ActivitySplash"
             android:exported="true">
@@ -41,8 +121,12 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".activity.ActivityDanhSachHoaDon"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
-            android:exported="true" />
+            android:exported="false" />
+
     </application>
 
 </manifest>

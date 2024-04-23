@@ -9,8 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import com.example.appqlpt.R
-import com.example.appqlpt.activity.THONG_TIN_DANG_NHAP
-import com.example.appqlpt.activity.USERNAME_KEY
+import com.example.appqlpt.activity.*
 import com.example.appqlpt.adapter.FILE_NAME
 import com.example.appqlpt.adapter.MA_KHU_KEY
 import com.example.appqlpt.database.HoaDonDao

@@ -4,6 +4,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.example.appqlpt.fragment.FragmentCaNhan
+import com.example.appqlpt.fragment.FragmentDangTin
+import com.example.appqlpt.fragment.FragmentThongKe
 import com.example.appqlpt.fragment.FragmentTrangChu
 
 class ViewPagerManHinhChinhAdapter(fragmentManager: FragmentManager,lifecycle:Lifecycle):FragmentStateAdapter(fragmentManager,lifecycle) {

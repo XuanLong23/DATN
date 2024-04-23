@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/mauNenApp"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/textview_tieude"
+        android:text="Thống kê tài chính"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="italic"
+        android:layout_marginLeft="10dp"
+        android:textSize="17dp"
+        android:text="Thống kê các loại tiền quản lý"
+        />
+    <LinearLayout
+        android:id="@+id/doanhThu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:orientation="horizontal"
+        android:background="@drawable/border_tron_white"
+        android:layout_marginRight="15dp">
+        <ImageView
+            android:layout_marginLeft="10dp"
+            android:layout_width="50dp"
+            android:layout_height="90dp"
+            android:src="@drawable/icon_doangthu"
+            />
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                style="@style/textview_tieude"
+                android:paddingTop="10dp"
+                android:text="Doanh thu"
+                />
+            <TextView
+                style="@style/textview_tieude"
+                android:textSize="18dp"
+                android:hint="Tổng số tiền theo tháng"
+
+                />
+        </LinearLayout>
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="90dp"
+            android:src="@drawable/black_right"
+            />
+    </LinearLayout>
+
+</LinearLayout>

@@ -8,7 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.appqlpt.R
-import com.example.appqlpt.activity.ActivityManHinhChinhChuTro
+import com.example.appqlpt.activity.*
 import com.example.appqlpt.adapter.FILE_NAME
 import com.example.appqlpt.adapter.MA_KHU_KEY
 import com.example.appqlpt.database.HopDongDao
@@ -31,35 +31,35 @@ class FragmentQuanLy : Fragment() {
         val srf=binding.root.context.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE)
         maKhu=srf.getString(MA_KHU_KEY,"")!!
         binding.taoHopDong.setOnClickListener {
-            val intent= Intent(context,ActivityManHinhChinhChuTro::class.java)
+            val intent= Intent(context, ActivityTaoHopDong::class.java)
             startActivity(intent)
         }
         binding.quanLyDichVu.setOnClickListener {
-            val intent= Intent(context,ActivityManHinhChinhChuTro::class.java)
+            val intent= Intent(context, ActivityXuLyPhong::class.java)
             startActivity(intent)
         }
         binding.xuLyHopDong.setOnClickListener {
-            val intent= Intent(context,ActivityManHinhChinhChuTro::class.java)
+            val intent= Intent(context, ActivityDanhSachPhongTHD::class.java)
             startActivity(intent)
         }
         binding.taoHoaDon.setOnClickListener {
-            val intent= Intent(context,ActivityManHinhChinhChuTro::class.java)
+            val intent= Intent(context, ActivityDanhSachPhong::class.java)
             startActivity(intent)
         }
         binding.dsPhongThue.setOnClickListener {
-            val intent= Intent(context,ActivityManHinhChinhChuTro::class.java)
+            val intent= Intent(context,ActivityDanhSachNguoiThue::class.java)
             startActivity(intent)
         }
         binding.dsKhachThue.setOnClickListener {
-            val intent= Intent(context,ActivityManHinhChinhChuTro::class.java)
+            val intent= Intent(context,ActivityDanhSachHoaDon::class.java)
             startActivity(intent)
         }
         binding.dsHoaDon.setOnClickListener {
-            val intent= Intent(context,ActivityManHinhChinhChuTro::class.java)
+            val intent= Intent(context,ActivityDanhSachHopDong::class.java)
             startActivity(intent)
         }
         binding.dsHopDong.setOnClickListener {
-            val intent= Intent(context,ActivityManHinhChinhChuTro::class.java)
+            val intent= Intent(context,ActivityQuanLyDichVu::class.java)
             startActivity(intent)
         }
         return binding.root

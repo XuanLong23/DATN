@@ -109,7 +109,7 @@ class DichVuDao(context:Context) {
         return list
     }
     @SuppressLint("Range")
-    fun getAllInDIchVuByKhuTro(maKhu:String):List<DichVu>{
+    fun getAllInDichVuByKhuTro(maKhu:String):List<DichVu>{
         val list= mutableListOf<DichVu>()
         val sql="""
             SELECT DISTINCT * FROM ${DichVu.TB_NAME} WHERE ${DichVu.CLM_MA_KHU_TRO}="$maKhu"
