@@ -1,56 +1,56 @@
-package com.example.appqlpt.fragment
+package com.example.appqlpt.activity
 
 import android.content.Context
 import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.MenuItem
 import com.example.appqlpt.R
-import com.example.appqlpt.activity.*
 import com.example.appqlpt.adapter.FILE_NAME
 import com.example.appqlpt.adapter.MA_KHU_KEY
 import com.example.appqlpt.database.HopDongDao
-import com.example.appqlpt.databinding.FragmentQuanLyBinding
+import com.example.appqlpt.databinding.ActivityQuanLyHopDongBinding
 import com.example.appqlpt.model.HopDong
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.util.*
 
-class FragmentQuanLy : Fragment() {
-    private lateinit var binding:FragmentQuanLyBinding
-     var listHopDong=listOf<HopDong>()
-    private var maKhu=""
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        binding=FragmentQuanLyBinding.inflate(inflater,container,false)
-        val srf=binding.root.context.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE)
-        maKhu=srf.getString(MA_KHU_KEY,"")!!
-        binding.qlHopDong.setOnClickListener {
-            val intent = Intent(context, ActivityQuanLyHopDong::class.java)
+class ActivityQuanLyHopDong : AppCompatActivity() {
+    private lateinit var binding: ActivityQuanLyHopDongBinding
+    var listHopDong= listOf<HopDong>()
+    private var maKhu = ""
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityQuanLyHopDongBinding.inflate(layoutInflater)
+        val srf = binding.root.context.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE)
+        maKhu = srf.getString(MA_KHU_KEY, "")!!
+        setContentView(binding.root)
+
+        setSupportActionBar(binding.tbDanhSachPhong)
+        val ab = supportActionBar
+        ab?.setHomeAsUpIndicator(R.drawable.back_left)
+        ab?.setDisplayHomeAsUpEnabled(true)
+
+        binding.dsHopDong.setOnClickListener {
+            updateHopDong()
+            val intent = Intent(this, ActivityDanhSachHopDong::class.java)
             startActivity(intent)
         }
-        binding.qlPhong.setOnClickListener {
-            val intent = Intent(context, ActivityDanhSachPhong::class.java)
+        binding.taoHopDong.setOnClickListener {
+            val intent = Intent(this, ActivityTaoHopDong::class.java)
             startActivity(intent)
         }
-        binding.qlDichVu.setOnClickListener {
-            val intent = Intent(context, ActivityQuanLyDichVu::class.java)
+        binding.TraPhong.setOnClickListener {
+            updateHopDong()
+            val intent = Intent(this, ActivityXuLyPhong::class.java)
             startActivity(intent)
         }
-        binding.qlKhachThue.setOnClickListener {
-            val intent = Intent(context, ActivityDanhSachNguoiThue::class.java)
-            startActivity(intent)
-        }
-        binding.qlHoaDon.setOnClickListener {
-            val intent = Intent(context, ActivityQuanLyHoaDon::class.java)
-            startActivity(intent)
-        }
-        return binding.root
+    }
+    override fun  onOptionsItemSelected(item : MenuItem): Boolean {
+        val id : Int = item.itemId;
+        if (id==android.R.id.home)
+            finish()
+        return super.onOptionsItemSelected(item);
     }
     private fun updateHopDong() {
         listHopDong = HopDongDao(binding.root.context).getAllInHopDongByMaKhu(maKhu,1)
@@ -85,8 +85,7 @@ class FragmentQuanLy : Fragment() {
             }
         }
     }
-
-    private fun tinhNgaySapHetHanHopDong(hopDong: HopDong, a: Int): GregorianCalendar {
+    fun tinhNgaySapHetHanHopDong(hopDong: HopDong, a:Int): GregorianCalendar {
         val ngayHetHan = hopDong.ngay_hop_dong
         val dateFormat: DateFormat = SimpleDateFormat("yyyy-MM-dd")
         val newDate = dateFormat.parse(ngayHetHan)
@@ -100,6 +99,7 @@ class FragmentQuanLy : Fragment() {
         val yearNgaySapHetHan = calendar.get(Calendar.YEAR)
         return GregorianCalendar(yearNgaySapHetHan, monthNgaySapHetHan, dayNgaySapHetHan)
     }
+
     fun updateHDHetHan(hopDong: HopDong){
         val hopDongNew = HopDong(
             ma_hop_dong = hopDong.ma_hop_dong,
